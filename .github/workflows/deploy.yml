@@ -19,8 +19,8 @@ jobs:
       
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          script_contents=$(cat ./github/scripts/build.sh)
 
-              # Now we have got the access of EC2 and we will start the deploy .
-              sudo cat /etc/letsencrypt/live/vclcontentplatfromserver.com/privkey.pem
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+                ${script_contents}
               '
