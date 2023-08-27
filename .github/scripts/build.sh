@@ -5,7 +5,7 @@ cd ~/app/VCL-content-platform-server/
 
 #clone the lastest version of the branch
 git checkout eason/docker_trial
-git pull orgin eason/docker_trial
+git pull origin eason/docker_trial
 
 #delete the old image and create the new one
 image_id=$(docker images --format "{{.ID}}" vcl_content_platform_backend_https)
