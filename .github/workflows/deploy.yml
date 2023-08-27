@@ -19,7 +19,7 @@ jobs:
       
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          script_contents=$(cat ${GITHUB_WORKSPACE}/github/scripts/build.sh)
+          script_contents=$(cat ${GITHUB_WORKSPACE}/.github/scripts/build.sh)
 
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
                 ${script_contents}
